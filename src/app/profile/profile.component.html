@@ -1,0 +1,79 @@
+<form [formGroup]="profileForm" *ngIf="isUser">
+    <div class="form-row" style="display:flex;justify-content:center;">
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" formControlName="username" class="form-control" [(ngModel)]="username">
+    </div>
+    </div>
+
+    <div class="form-row" style="display:flex;justify-content:center;">
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" formControlName="password" class="form-control" [(ngModel)]="password">
+    </div>
+    </div>
+
+    <div class="form-row" style="display:flex;justify-content:center;">
+    <div class="form-group">
+        <label for="id">Id</label>
+        <input type="text" formControlName="id" class="form-control" [(ngModel)]="id">
+    </div>
+    </div>
+
+    <div class="form-row" style="display:flex;justify-content:center;">
+    <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" formControlName="firstName" class="form-control" [(ngModel)]="firstName">
+    </div>
+    </div>
+
+    <div class="form-row" style="display:flex;justify-content:center;">
+    <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" formControlName="lastName" class="form-control" [(ngModel)]="lastName">
+    </div>
+    </div>
+
+    <div class="form-row" style="display:flex;justify-content:center;">
+    <div class="form-group">
+        <label for="role">role</label>
+        <input type="text" formControlName="role" class="form-control" [(ngModel)]="role">
+    </div>
+    </div>
+
+    <div class="form-row" style="display:flex;justify-content:center;">
+    <div class="form-group">
+        <label for="token">Token</label>
+        <input type="text" formControlName="token" class="form-control" [(ngModel)]="token">
+    </div>
+    </div>
+
+</form>
+
+<table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col" style="border-right:1px solid;width:200px;">UserName</th>
+        <th scope="col" style="border-right:1px solid;width:200px;">Password</th>
+        <th scope="col" style="border-right:1px solid;width:200px;">Id</th>
+        <th scope="col" style="border-right:1px solid;width:200px;">First Name</th>
+        <th scope="col" style="border-right:1px solid;width:200px;">Last Name</th>
+        <th scope="col" style="border-right:1px solid;width:200px;">Role</th>
+        <th scope="col" style="border-right:1px solid;width:200px;">Token</th>
+      </tr>
+    </thead>
+
+    <ng-container *ngFor="let u of usersList">
+        <tr>
+            <td>{{u.username}}</td>
+            <td>{{u.password}}</td>
+            <td>{{u.id}}</td>
+            <td>{{u.firstName}}</td>
+            <td>{{u.lastName}}</td>
+            <td>{{u.role}}</td>
+            <td>{{u.token}}</td>
+        </tr>
+
+    </ng-container>
+
+    </table>
